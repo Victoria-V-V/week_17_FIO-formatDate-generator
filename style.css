@@ -1,0 +1,40 @@
+/* Практическое задание №1 */
+.hometask1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hometask1__title {
+    font-weight: bold;
+    color: rgb(58, 58, 194);
+}
+
+.fullname {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fullname__desc {
+    margin: 0;
+}
+
+.fullname__input {
+    min-width: 350px;
+}
+
+.fullname__convert {
+    max-width: min-content;
+    align-self: center;
+}
+
+.firstname,
+.lastname,
+.middlename {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
