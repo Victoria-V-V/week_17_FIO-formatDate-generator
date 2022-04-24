@@ -3,12 +3,15 @@ const convertButton = document.querySelector('.fullname__convert');
 
 convertButton.addEventListener("click", () => {
     const fullnameInput = document.querySelector('.fullname__input');
-    const separatedNames = (((fullnameInput.value).trim())).split(" ");
+
     //здесь получится простая проверка, если есть лишние пробелы только в начале или в конце, и введеные фамилия, имя и отчество разделены одним пробелом. Для более сложной проверки наверно нужно использовать регулрные выражения?
 
-    const firstname = separatedNames[0];
-    const lastname = separatedNames[1];
-    const middlename = separatedNames[2];
+    const [firstname, lastname, middlename] = (((fullnameInput.value).trim())).split(" ");
+    //полная запись:
+    // const separatedNames = (((fullnameInput.value).trim())).split(" ");
+    // const firstname = separatedNames[0];
+    // const lastname = separatedNames[1];
+    // const middlename = separatedNames[2];
 
     const firstnameConverted = document.querySelector('.firstname__converted');
     const lastnameConverted = document.querySelector('.lastname__converted');
@@ -26,6 +29,7 @@ countdownButton.addEventListener("click", formatDate);
 
 function formatDate() {
     const clickTime = new Date();
+    countdownButton.disabled = true;
 
     const x = setInterval(function () {
         const second = 1000;
@@ -87,4 +91,4 @@ generatorButton.addEventListener("click", () => {
     average.innerHTML = `Среднее арифметическое: ${arraySum/generatedArray.length} `;
     product.innerHTML = `Произведение чисел: ${arrayProd}`;
 
-}, getRandomIntInclusive);
+});
